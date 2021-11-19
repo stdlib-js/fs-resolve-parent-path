@@ -20,7 +20,7 @@ limitations under the License.
 
 # Resolve Parent Path
 
-[![NPM version][npm-image]][npm-url] [![Build Status][test-image]][test-url] [![Coverage Status][coverage-image]][coverage-url] [![dependencies][dependencies-image]][dependencies-url]
+[![NPM version][npm-image]][npm-url] [![Build Status][test-image]][test-url] [![Coverage Status][coverage-image]][coverage-url] <!-- [![dependencies][dependencies-image]][dependencies-url] -->
 
 > Resolve a path by walking parent directories.
 
@@ -256,8 +256,12 @@ Copyright &copy; 2016-2021. The Stdlib [Authors][stdlib-authors].
 [coverage-image]: https://img.shields.io/codecov/c/github/stdlib-js/fs-resolve-parent-path/main.svg
 [coverage-url]: https://codecov.io/github/stdlib-js/fs-resolve-parent-path?branch=main
 
+<!--
+
 [dependencies-image]: https://img.shields.io/david/stdlib-js/fs-resolve-parent-path.svg
 [dependencies-url]: https://david-dm.org/stdlib-js/fs-resolve-parent-path/main
+
+-->
 
 [chat-image]: https://img.shields.io/gitter/room/stdlib-js/stdlib.svg
 [chat-url]: https://gitter.im/stdlib-js/stdlib/
