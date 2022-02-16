@@ -1,6 +1,6 @@
 {
   "name": "@stdlib/fs-resolve-parent-path",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Resolve a path by walking parent directories.",
   "license": "Apache-2.0",
   "author": {
