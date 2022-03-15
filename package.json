@@ -1,6 +1,6 @@
 {
   "name": "@stdlib/fs-resolve-parent-path",
-  "version": "0.0.8",
+  "version": "0.0.0",
   "description": "Resolve a path by walking parent directories.",
   "license": "Apache-2.0",
   "author": {
@@ -48,6 +48,7 @@
     "@stdlib/fs-exists": "^0.0.x",
     "@stdlib/fs-read-file": "^0.0.x",
     "@stdlib/process-cwd": "^0.0.x",
+    "@stdlib/string-format": "^0.0.x",
     "@stdlib/utils-define-nonenumerable-read-only-property": "^0.0.x"
   },
   "devDependencies": {
