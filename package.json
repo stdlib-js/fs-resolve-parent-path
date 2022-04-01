@@ -1,0 +1,43 @@
+{
+  "name": "@stdlib/fs-resolve-parent-path",
+  "version": "0.0.0",
+  "description": "Resolve a path by walking parent directories.",
+  "license": "Apache-2.0",
+  "main": "./bundle.js",
+  "homepage": "https://stdlib.io",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/stdlib-js/fs-resolve-parent-path.git"
+  },
+  "bugs": {
+    "url": "https://github.com/stdlib-js/stdlib/issues"
+  },
+  "keywords": [
+    "stdlib",
+    "stdfs",
+    "fs",
+    "resolve",
+    "parent",
+    "path",
+    "async",
+    "sync",
+    "file",
+    "directory",
+    "dir",
+    "find",
+    "up",
+    "findup",
+    "find-up",
+    "upsearch",
+    "search",
+    "lookup",
+    "look-up",
+    "locate",
+    "walk",
+    "filesystem"
+  ],
+  "funding": {
+    "type": "patreon",
+    "url": "https://www.patreon.com/athan"
+  }
+}
