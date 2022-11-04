@@ -24,38 +24,30 @@ limitations under the License.
 
 > Resolve a path by walking parent directories.
 
+<section class="installation">
 
+## Installation
+
+```bash
+npm install @stdlib/fs-resolve-parent-path
+```
+
+Alternatively,
+
+-   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm` branch][esm-url].
+-   If you are using Deno, visit the [`deno` branch][deno-url].
+-   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd` branch][umd-url].
+
+The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
+
+</section>
 
 <section class="usage">
 
 ## Usage
 
-To use in Observable,
-
 ```javascript
-resolveParentPath = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/fs-resolve-parent-path@umd/browser.js' )
-```
-
-To vendor stdlib functionality and avoid installing dependency trees for Node.js, you can use the UMD server build:
-
-```javascript
-var resolveParentPath = require( 'path/to/vendor/umd/fs-resolve-parent-path/index.js' )
-```
-
-To include the bundle in a webpage,
-
-```html
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/fs-resolve-parent-path@umd/browser.js"></script>
-```
-
-If no recognized module system is present, access bundle contents via the global scope:
-
-```html
-<script type="text/javascript">
-(function () {
-    window.resolveParentPath;
-})();
-</script>
+var resolveParentPath = require( '@stdlib/fs-resolve-parent-path' );
 ```
 
 <a name="resolve-parent-path"></a>
@@ -129,13 +121,8 @@ The function accepts the same `options` as [`resolveParentPath()`](#resolve-pare
 
 <!-- eslint no-undef: "error" -->
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<body>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/fs-resolve-parent-path@umd/browser.js"></script>
-<script type="text/javascript">
-(function () {
+```javascript
+var resolveParentPath = require( '@stdlib/fs-resolve-parent-path' );
 
 var opts = {
     'dir': __dirname
@@ -160,18 +147,65 @@ function onPath( error, path ) {
     }
     console.log( path );
 }
-
-})();
-</script>
-</body>
-</html>
 ```
 
 </section>
 
 <!-- /.examples -->
 
+* * *
 
+<section class="cli">
+
+## CLI
+
+<section class="installation">
+
+## Installation
+
+To use the module as a general utility, install the module globally
+
+```bash
+npm install -g @stdlib/fs-resolve-parent-path
+```
+
+</section>
+
+<!-- CLI usage documentation. -->
+
+<section class="usage">
+
+### Usage
+
+```text
+Usage: resolve-parent-path [options] <path>
+
+Options:
+
+  -h,    --help                Print this message.
+  -V,    --version             Print the package version.
+         --dir dir             Base search directory.
+```
+
+</section>
+
+<!-- /.usage -->
+
+<section class="examples">
+
+### Examples
+
+```bash
+$ resolve-parent-path package.json
+```
+
+</section>
+
+<!-- /.examples -->
+
+</section>
+
+<!-- /.cli -->
 
 <!-- Section for related `stdlib` packages. Do not manually edit this section, as it is automatically populated. -->
 
@@ -260,7 +294,7 @@ Copyright &copy; 2016-2022. The Stdlib [Authors][stdlib-authors].
 
 <!-- <related-links> -->
 
-[@stdlib/fs/resolve-parent-path-by]: https://github.com/stdlib-js/fs-resolve-parent-path-by/tree/umd
+[@stdlib/fs/resolve-parent-path-by]: https://github.com/stdlib-js/fs-resolve-parent-path-by
 
 <!-- </related-links> -->
 
