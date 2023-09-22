@@ -18,25 +18,158 @@ limitations under the License.
 
 -->
 
+
+<details>
+  <summary>
+    About stdlib...
+  </summary>
+  <p>We believe in a future in which the web is a preferred environment for numerical computation. To help realize this future, we've built stdlib. stdlib is a standard library, with an emphasis on numerical and scientific computation, written in JavaScript (and C) for execution in browsers and in Node.js.</p>
+  <p>The library is fully decomposable, being architected in such a way that you can swap out and mix and match APIs and functionality to cater to your exact preferences and use cases.</p>
+  <p>When you use stdlib, you can be absolutely certain that you are using the most thorough, rigorous, well-written, studied, documented, tested, measured, and high-quality code out there.</p>
+  <p>To join us in bringing numerical computing to the web, get started by checking us out on <a href="https://github.com/stdlib-js/stdlib">GitHub</a>, and please consider <a href="https://opencollective.com/stdlib">financially supporting stdlib</a>. We greatly appreciate your continued support!</p>
+</details>
+
 # Resolve Parent Path
 
 [![NPM version][npm-image]][npm-url] [![Build Status][test-image]][test-url] [![Coverage Status][coverage-image]][coverage-url] <!-- [![dependencies][dependencies-image]][dependencies-url] -->
 
 > Resolve a path by walking parent directories.
 
+<section class="installation">
 
+## Installation
 
+```bash
+npm install @stdlib/fs-resolve-parent-path
+```
 
+Alternatively,
 
+-   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm` branch][esm-url].
+-   If you are using Deno, visit the [`deno` branch][deno-url].
+-   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd` branch][umd-url].
+-   To use as a general utility for the command line, install the corresponding [CLI package][cli-section] globally.
 
+The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
 
+</section>
 
+<section class="usage">
 
+## Usage
 
+```javascript
+var resolveParentPath = require( '@stdlib/fs-resolve-parent-path' );
+```
+
+<a name="resolve-parent-path"></a>
+
+#### resolveParentPath( path\[, options], clbk )
+
+Asynchronously resolves a path by walking parent directories.
+
+```javascript
+resolveParentPath( 'package.json', onPath );
+
+function onPath( error, path ) {
+    if ( error ) {
+        throw error;
+    }
+    console.log( path );
+    // => '...'
+}
+```
+
+The function accepts the following `options`:
+
+-   **dir**: base directory from which to begin walking. May be either an absolute path or a path relative to the current working directory.
+
+By default, the function begins walking from the current working directory. To specify an alternative directory, set the `dir` option.
+
+```javascript
+var opts = {
+    'dir': __dirname
+};
+resolveParentPath( 'package.json', opts, onPath );
+
+function onPath( error, path ) {
+    if ( error ) {
+        throw error;
+    }
+    console.log( path );
+    // => '...'
+}
+```
+
+#### resolveParentPath.sync( path\[, options] )
+
+Synchronously resolves a path by walking parent directories.
+
+```javascript
+var path = resolveParentPath.sync( 'package.json' );
+// returns '...'
+```
+
+The function accepts the same `options` as [`resolveParentPath()`](#resolve-parent-path).
+
+</section>
+
+<!-- /.usage -->
+
+<section class="notes">
+
+## Notes
+
+-   If unable to resolve a path, both functions return `null`.
+-   This implementation is **not** similar in functionality to core [`path.resolve`][node-core-path-resolve]. The latter performs string manipulation to generate a full path. This implementation walks parent directories to perform a **search**, thereby touching the file system. Accordingly, this implementation resolves a _real_ absolute file path and is intended for use when a target's location in a parent directory is unknown relative to a child directory; e.g., when wanting to find a package root from deep within a package directory. 
+
+</section>
+
+<!-- /.notes -->
+
+<section class="examples">
+
+## Examples
+
+<!-- eslint no-undef: "error" -->
+
+```javascript
+var resolveParentPath = require( '@stdlib/fs-resolve-parent-path' );
+
+var opts = {
+    'dir': __dirname
+};
+
+/* Sync */
+
+var out = resolveParentPath.sync( 'package.json', opts );
+// returns '...'
+
+out = resolveParentPath.sync( 'non_existent_basename' );
+// returns null
+
+/* Async */
+
+resolveParentPath( 'package.json', opts, onPath );
+resolveParentPath( './../non_existent_path', onPath );
+
+function onPath( error, path ) {
+    if ( error ) {
+        throw error;
+    }
+    console.log( path );
+}
+```
+
+</section>
+
+<!-- /.examples -->
+
+* * *
 
 <section class="cli">
 
-
+## CLI
 
 <section class="installation">
 
@@ -54,7 +187,7 @@ npm install -g @stdlib/fs-resolve-parent-path-cli
 
 <section class="usage">
 
-## Usage
+### Usage
 
 ```text
 Usage: resolve-parent-path [options] <path>
@@ -72,7 +205,7 @@ Options:
 
 <section class="examples">
 
-## Examples
+### Examples
 
 ```bash
 $ resolve-parent-path package.json
@@ -90,10 +223,11 @@ $ resolve-parent-path package.json
 
 <section class="related">
 
+* * *
+
 ## See Also
 
--   <span class="package-name">[`@stdlib/fs-resolve-parent-path`][@stdlib/fs-resolve-parent-path]</span><span class="delimiter">: </span><span class="description">resolve a path by walking parent directories.</span>
--   <span class="package-name">[`@stdlib/fs-resolve-parent-path-cli-by`][@stdlib/fs/resolve-parent-path-by]</span><span class="delimiter">: </span><span class="description">resolve a path according to a predicate function by walking parent directories.</span>
+-   <span class="package-name">[`@stdlib/fs-resolve-parent-path-by`][@stdlib/fs/resolve-parent-path-by]</span><span class="delimiter">: </span><span class="description">resolve a path according to a predicate function by walking parent directories.</span>
 
 </section>
 
@@ -112,7 +246,7 @@ This package is part of [stdlib][stdlib], a standard library for JavaScript and 
 
 For more information on the project, filing bug reports and feature requests, and guidance on how to develop [stdlib][stdlib], see the main project [repository][stdlib].
 
-### Community
+#### Community
 
 [![Chat][chat-image]][chat-url]
 
@@ -135,11 +269,11 @@ Copyright &copy; 2016-2023. The Stdlib [Authors][stdlib-authors].
 
 <section class="links">
 
-[npm-image]: http://img.shields.io/npm/v/@stdlib/fs-resolve-parent-path-cli.svg
-[npm-url]: https://npmjs.org/package/@stdlib/fs-resolve-parent-path-cli
+[npm-image]: http://img.shields.io/npm/v/@stdlib/fs-resolve-parent-path.svg
+[npm-url]: https://npmjs.org/package/@stdlib/fs-resolve-parent-path
 
-[test-image]: https://github.com/stdlib-js/fs-resolve-parent-path/actions/workflows/test.yml/badge.svg?branch=main
-[test-url]: https://github.com/stdlib-js/fs-resolve-parent-path/actions/workflows/test.yml?query=branch:main
+[test-image]: https://github.com/stdlib-js/fs-resolve-parent-path/actions/workflows/test.yml/badge.svg?branch=v0.1.0
+[test-url]: https://github.com/stdlib-js/fs-resolve-parent-path/actions/workflows/test.yml?query=branch:v0.1.0
 
 [coverage-image]: https://img.shields.io/codecov/c/github/stdlib-js/fs-resolve-parent-path/main.svg
 [coverage-url]: https://codecov.io/github/stdlib-js/fs-resolve-parent-path?branch=main
