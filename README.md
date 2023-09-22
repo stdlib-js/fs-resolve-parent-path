@@ -18,26 +18,48 @@ limitations under the License.
 
 -->
 
+
+<details>
+  <summary>
+    About stdlib...
+  </summary>
+  <p>We believe in a future in which the web is a preferred environment for numerical computation. To help realize this future, we've built stdlib. stdlib is a standard library, with an emphasis on numerical and scientific computation, written in JavaScript (and C) for execution in browsers and in Node.js.</p>
+  <p>The library is fully decomposable, being architected in such a way that you can swap out and mix and match APIs and functionality to cater to your exact preferences and use cases.</p>
+  <p>When you use stdlib, you can be absolutely certain that you are using the most thorough, rigorous, well-written, studied, documented, tested, measured, and high-quality code out there.</p>
+  <p>To join us in bringing numerical computing to the web, get started by checking us out on <a href="https://github.com/stdlib-js/stdlib">GitHub</a>, and please consider <a href="https://opencollective.com/stdlib">financially supporting stdlib</a>. We greatly appreciate your continued support!</p>
+</details>
+
 # Resolve Parent Path
 
 [![NPM version][npm-image]][npm-url] [![Build Status][test-image]][test-url] [![Coverage Status][coverage-image]][coverage-url] <!-- [![dependencies][dependencies-image]][dependencies-url] -->
 
 > Resolve a path by walking parent directories.
 
+<section class="installation">
 
+## Installation
+
+```bash
+npm install @stdlib/fs-resolve-parent-path
+```
+
+Alternatively,
+
+-   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm` branch][esm-url].
+-   If you are using Deno, visit the [`deno` branch][deno-url].
+-   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd` branch][umd-url].
+-   To use as a general utility for the command line, install the corresponding [CLI package][cli-section] globally.
+
+The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
+
+</section>
 
 <section class="usage">
 
 ## Usage
 
 ```javascript
-import resolveParentPath from 'https://cdn.jsdelivr.net/gh/stdlib-js/fs-resolve-parent-path@deno/mod.js';
-```
-
-You can also import the following named exports from the package:
-
-```javascript
-import { sync } from 'https://cdn.jsdelivr.net/gh/stdlib-js/fs-resolve-parent-path@deno/mod.js';
+var resolveParentPath = require( '@stdlib/fs-resolve-parent-path' );
 ```
 
 <a name="resolve-parent-path"></a>
@@ -112,7 +134,7 @@ The function accepts the same `options` as [`resolveParentPath()`](#resolve-pare
 <!-- eslint no-undef: "error" -->
 
 ```javascript
-import resolveParentPath from 'https://cdn.jsdelivr.net/gh/stdlib-js/fs-resolve-parent-path@deno/mod.js';
+var resolveParentPath = require( '@stdlib/fs-resolve-parent-path' );
 
 var opts = {
     'dir': __dirname
@@ -143,7 +165,59 @@ function onPath( error, path ) {
 
 <!-- /.examples -->
 
+* * *
 
+<section class="cli">
+
+## CLI
+
+<section class="installation">
+
+## Installation
+
+To use as a general utility, install the CLI package globally
+
+```bash
+npm install -g @stdlib/fs-resolve-parent-path-cli
+```
+
+</section>
+
+<!-- CLI usage documentation. -->
+
+<section class="usage">
+
+### Usage
+
+```text
+Usage: resolve-parent-path [options] <path>
+
+Options:
+
+  -h,    --help                Print this message.
+  -V,    --version             Print the package version.
+         --dir dir             Base search directory.
+```
+
+</section>
+
+<!-- /.usage -->
+
+<section class="examples">
+
+### Examples
+
+```bash
+$ resolve-parent-path package.json
+```
+
+</section>
+
+<!-- /.examples -->
+
+</section>
+
+<!-- /.cli -->
 
 <!-- Section for related `stdlib` packages. Do not manually edit this section, as it is automatically populated. -->
 
@@ -168,7 +242,7 @@ function onPath( error, path ) {
 
 ## Notice
 
-This package is part of [stdlib][stdlib], a standard library with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
+This package is part of [stdlib][stdlib], a standard library for JavaScript and Node.js, with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
 
 For more information on the project, filing bug reports and feature requests, and guidance on how to develop [stdlib][stdlib], see the main project [repository][stdlib].
 
@@ -198,8 +272,8 @@ Copyright &copy; 2016-2023. The Stdlib [Authors][stdlib-authors].
 [npm-image]: http://img.shields.io/npm/v/@stdlib/fs-resolve-parent-path.svg
 [npm-url]: https://npmjs.org/package/@stdlib/fs-resolve-parent-path
 
-[test-image]: https://github.com/stdlib-js/fs-resolve-parent-path/actions/workflows/test.yml/badge.svg?branch=main
-[test-url]: https://github.com/stdlib-js/fs-resolve-parent-path/actions/workflows/test.yml?query=branch:main
+[test-image]: https://github.com/stdlib-js/fs-resolve-parent-path/actions/workflows/test.yml/badge.svg?branch=v0.1.0
+[test-url]: https://github.com/stdlib-js/fs-resolve-parent-path/actions/workflows/test.yml?query=branch:v0.1.0
 
 [coverage-image]: https://img.shields.io/codecov/c/github/stdlib-js/fs-resolve-parent-path/main.svg
 [coverage-url]: https://codecov.io/github/stdlib-js/fs-resolve-parent-path?branch=main
@@ -236,7 +310,7 @@ Copyright &copy; 2016-2023. The Stdlib [Authors][stdlib-authors].
 
 <!-- <related-links> -->
 
-[@stdlib/fs/resolve-parent-path-by]: https://github.com/stdlib-js/fs-resolve-parent-path-by/tree/deno
+[@stdlib/fs/resolve-parent-path-by]: https://github.com/stdlib-js/fs-resolve-parent-path-by
 
 <!-- </related-links> -->
 
