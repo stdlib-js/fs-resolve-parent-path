@@ -44,7 +44,7 @@ limitations under the License.
 To use in Observable,
 
 ```javascript
-resolveParentPath = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/fs-resolve-parent-path@umd/browser.js' )
+resolveParentPath = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/fs-resolve-parent-path@v0.2.2-umd/browser.js' )
 ```
 
 To vendor stdlib functionality and avoid installing dependency trees for Node.js, you can use the UMD server build:
@@ -56,7 +56,7 @@ var resolveParentPath = require( 'path/to/vendor/umd/fs-resolve-parent-path/inde
 To include the bundle in a webpage,
 
 ```html
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/fs-resolve-parent-path@umd/browser.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/fs-resolve-parent-path@v0.2.2-umd/browser.js"></script>
 ```
 
 If no recognized module system is present, access bundle contents via the global scope:
@@ -144,7 +144,7 @@ The function accepts the same `options` as [`resolveParentPath()`](#resolve-pare
 <!DOCTYPE html>
 <html lang="en">
 <body>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/fs-resolve-parent-path@umd/browser.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/fs-resolve-parent-path@v0.2.2-umd/browser.js"></script>
 <script type="text/javascript">
 (function () {
 
